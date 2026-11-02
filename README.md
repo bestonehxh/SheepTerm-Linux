@@ -17,7 +17,7 @@ and data formats: hosts, settings, `known_hosts` and the encrypted password vaul
 
 [Website & screenshots](https://sheepterm.com/) · [macOS download](https://github.com/bestonehxh/SheepTerm/releases/latest) · [Windows download](https://github.com/bestonehxh/SheepTerm-Windows/releases/latest) · [Linux download](https://github.com/bestonehxh/SheepTerm-Linux/releases/latest)
 
-This is the first Linux line (0.1). Serial consoles, web tabs and the AI panel are not in the Linux build yet.
+This is the first Linux line (0.1).
 
 ## Download
 
@@ -25,23 +25,22 @@ This is the first Linux line (0.1). Serial consoles, web tabs and the AI panel a
 |---|---|---|
 | 🍎 macOS | [**Latest release**](https://github.com/bestonehxh/SheepTerm/releases/latest) | macOS 26.4 (Tahoe) or later, Apple Silicon |
 | 🪟 Windows | [**Latest release**](https://github.com/bestonehxh/SheepTerm-Windows/releases/latest) (portable zip) | Windows 10 / 11, 64-bit (x64) |
-| 🐧 Linux | [**Latest release**](https://github.com/bestonehxh/SheepTerm-Linux/releases/latest) (portable tar.gz) | x86_64 or arm64 (aarch64), GTK 4 |
+| 🐧 Linux | [**Latest release**](https://github.com/bestonehxh/SheepTerm-Linux/releases/latest) (single-file AppImage) | x86_64 or arm64 (aarch64), GTK 4 |
 
-Go to the [latest release](https://github.com/bestonehxh/SheepTerm-Linux/releases/latest) and download the archive for
-your machine: `SheepTerm-<version>-<build>-linux-x86_64.tar.gz` for most PCs, or `...-linux-aarch64.tar.gz` for ARM
-(Raspberry Pi 5, Ampere, Snapdragon laptops). `SHA256SUMS.txt` next to them lists the checksums.
+Go to the [latest release](https://github.com/bestonehxh/SheepTerm-Linux/releases/latest) and choose the AppImage for your machine: `SheepTerm-<version>-<build>-linux-x86_64.AppImage` for most PCs, or `...-linux-aarch64.AppImage` for ARM. `SHA256SUMS.txt` lists the checksums.
 
 ```sh
-tar xzf SheepTerm-*-linux-x86_64.tar.gz
-cd SheepTerm-*-linux-x86_64
-./SheepTerm
+chmod +x SheepTerm-*-linux-x86_64.AppImage
+./SheepTerm-*-linux-x86_64.AppImage
 ```
 
-Unpack it **somewhere of your own** (your home folder, `~/Apps`). No installer, no root, nothing written outside that folder.
+Use the corresponding aarch64 filename on ARM. On a system without FUSE, start it with `APPIMAGE_EXTRACT_AND_RUN=1`. Put the file in a writable location such as `~/Apps`. The AppImage contains the fonts and licence files. It checks signed updates and restarts automatically after you choose to install an update and confirm that active sessions will close.
+
+To migrate from an older extracted Linux archive, place the AppImage next to the existing `Data` directory. The old 0.1 (3) application does not contain an updater, so this first migration is manual. Keep `Data` when moving or replacing the application.
 
 ### Requirements
 
-GTK 4 from your distribution, nothing else: the Swift runtime is linked in and the fonts ship in `Resources/`.
+GTK 4 from your distribution; the Swift runtime and fonts are included in the AppImage.
 
 | Distribution | Package |
 |---|---|
@@ -65,7 +64,7 @@ Linux terminal conventions: **Ctrl+Shift+C / V** copy and paste, **Ctrl+Shift+F*
 
 ## Licences
 
-SheepTerm for Linux includes, with their licences in the `Licenses/` folder of the download:
+SheepTerm for Linux includes the following licences inside the AppImage:
 
 - Inter and JetBrains Mono fonts - SIL Open Font License 1.1
 - Lucide icons - ISC License; Phosphor icons - MIT License
