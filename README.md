@@ -25,7 +25,7 @@ Linux is an early release.
 |---|---|---|
 | 🍎 macOS | [**Latest release**](https://github.com/bestonehxh/SheepTerm/releases/latest) | macOS 26.4 (Tahoe) or later, Apple Silicon |
 | 🪟 Windows | [**Latest release**](https://github.com/bestonehxh/SheepTerm-Windows/releases/latest) (portable zip) | Windows 10 / 11, 64-bit (x64) |
-| 🐧 Linux | [**Latest release**](https://github.com/bestonehxh/SheepTerm-Linux/releases/latest) (AppImage, .deb, .rpm) | x86_64 or arm64 (aarch64), GTK 4 |
+| 🐧 Linux | [**Latest release**](https://github.com/bestonehxh/SheepTerm-Linux/releases/latest) (AppImage, .deb, .rpm, .tar.gz) | x86_64 or arm64 (aarch64), GTK 4 |
 
 Go to the [latest release](https://github.com/bestonehxh/SheepTerm-Linux/releases/latest) and choose the AppImage for your machine: `SheepTerm-<version>-<build>-linux-x86_64.AppImage` for most PCs, or `...-linux-aarch64.AppImage` for ARM. `SHA256SUMS.txt` lists the checksums.
 
@@ -53,6 +53,10 @@ To migrate from an older extracted Linux archive, place the AppImage next to the
 The release also includes `.deb` (amd64 or arm64) and `.rpm` (x86_64 or aarch64) packages. Install the package for your distribution and processor using its package manager. Native packages require GTK 4, WebKitGTK 6.0 and the dependencies listed by the package manager. In-app web tabs are included in native packages; the portable AppImage opens web addresses in the system browser.
 
 Native package installations store data in `${XDG_DATA_HOME:-~/.local/share}/sheepterm/Data`. Portable installations keep their `Data` folder beside the AppImage. Moving existing data between these locations is a manual migration; make a backup before migrating.
+
+### Updates
+
+All Linux formats (`.AppImage`, `.deb`, `.rpm`, and portable `.tar.gz`) support in-app updates via **Help ▸ Check for Updates…**. Updates verify cryptographic signatures and install in-place.
 
 ### Requirements
 
